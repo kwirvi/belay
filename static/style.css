@@ -1,0 +1,239 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+    .layout {
+      display: block; /* Stack sections vertically */
+    }
+  
+    /* Hide all sections initially */
+    .channelList, .currentChannel, .repliesThread {
+      display: none;
+    }
+  
+    /* Show only the active section */
+    .channelList.active, .currentChannel.active, .repliesThread.active {
+      display: block;
+    }
+
+    .menu-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background-color: #003845;
+      color: #ffffff;
+      border-top: 1px solid #004e64;
+    }
+  
+    .menu-bar button {
+      flex: 1;
+      padding: 1rem;
+      background: none;
+      border: none;
+      color: inherit;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  
+    .menu-bar button:hover {
+      background-color: #005f73;
+    }
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #f0f4f8;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    background-color: #005f73; 
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .layout {
+    display: flex;
+    height: calc(100vh - 60px); 
+    overflow: hidden;
+  }
+  
+  .channelList {
+    background-color: #003845; 
+    width: 20%;
+    padding: 1rem;
+    overflow-y: auto;
+    border-right: 1px solid #004e64;
+  }
+  
+  .channelList h2 {
+    font-size: 1.2rem;
+    color: #a6dcef;
+    margin-bottom: 1rem;
+  }
+  
+  .channel {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .channel:hover {
+    background-color: #007f99; 
+  }
+  
+  .channel.active {
+    background-color: #0a9396;
+    font-weight: bold;
+  }
+  
+  #addChannel {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: #94d2bd;
+    border: none;
+    color: #003845;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #addChannel:hover {
+    background-color: #76c7b7; 
+  }
+  
+  .currentChannel {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .currentChannelHeader {
+    font-size: 1.5rem;
+    color: #005f73;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .messages {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 1rem; /* Space for scrollbar */
+    margin-bottom: 1rem;
+  }
+  
+  .message {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    background-color: #f0f4f8;
+    color: #333333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message author {
+    font-weight: bold;
+    color: #005f73;
+  }
+  
+  .message content {
+    display: block;
+    margin-top: 0.25rem;
+  }
+  
+  .commentBox {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .commentBox label {
+    margin-right: 0.5rem;
+    color: #005f73;
+  }
+  
+  .commentBox input[type="text"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+  }
+  
+  #postNewMessage {
+    padding: 0.75rem 1.5rem;
+    background-color: #0a9396;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #postNewMessage:hover {
+    background-color: #005f73;
+  }
+  
+  .repliesThread {
+    width: 25%;
+    background-color: #003845;
+    color: #ffffff;
+    padding: 1rem;
+    overflow-y: auto;
+    border-left: 1px solid #004e64;
+  }
+  
+  .repliesThread h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .repliesThread .message {
+    background-color: #004e64;
+    color: #a6dcef;
+    margin-bottom: 0.5rem;
+  }
+  
+  .repliesThread .message:hover {
+    background-color: #005f73;
+  }
+  
+  #exitThread {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #94d2bd;
+    color: #003845;
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #exitThread:hover {
+    background-color: #76c7b7;
+  }
+  

@@ -3,66 +3,47 @@
   <title>Belay</title>
   <meta charset=“utf-8”> 
   <meta name=“viewport” content=“width=device-width”>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>Belay</h1>
+        <img src="BelayHeader.jpg">
     </header>
 
-    <div class="twoColumn">
+    <div class="layout">
         <aside class="channelList">
             <h2>Channels</h2>
             <div class="emptyList">No channels yet!</div>
-            <div class="channel"># General</div>   <!-- Delete later -->
-            <div class="channel"># Development</div>  <!-- Delete later -->
-            <div class="channel"># Marketing</div>  <!-- Delete later -->
+            <div class="channel"> General</div>   <!-- Delete later -->
+            <div class="channel"> Secret Project </div>  <!-- Delete later -->
+            <div class="channel"> Cat Pictures </div>  <!-- Delete later -->
             <button id="addChannel">Create New Channel</button>
         </aside>
+
         <div class="currentChannel">
             <h2 class="currentChannelHeader">Current Channel</h2> 
             <div class="messages"> <!-- Replaced with content from database -->
-                <message>
-                    <author>Author1</author>
-                    <content>Good morning USA!</content>
-                </message>
-                <message>
-                    <author>Author2</author>
-                    <content>It's nighttime, bud</content>
-                </message>
+                <div class="message">
+                    <message>
+                        <author>Author1</author>
+                        <content>Good morning USA!</content>
+                    </message>
+                </div>
+                <div class="message">
+                    <message>
+                        <author>Author2</author>
+                        <content>It's nighttime, bud</content>
+                    </message>
+                </div>
             </div> 
             <div class="commentBox">
-                <div><label for="comment">Add Message:</label></div>
-                <textarea name="comment"></textarea>
+                <label for="comment">Add Message:</label>
+                <input type="text" name="comment" placeholder="Message..."></textarea>
                 <button id="postNewMessage" type="submit" value="Post">Post</button>
             </div>
         </div>
-    </div>
 
-    <div class="threeColumn">
-        <aside class="channel-list">
-            <h2>Channels</h2>
-            <div class="emptyList">No channels yet!</div>
-            <div class="channel"># General</div>   <!-- Delete later -->
-            <div class="channel"># Development</div>  <!-- Delete later -->
-            <div class="channel"># Marketing</div>  <!-- Delete later -->
-        </aside>
-        <h2 class="currentChannelHeader">Current Channel</h2> 
-        <div class="messages"> <!-- Replaced with content from database -->
-            <message>
-                <author>Author1</author>
-                <content>Good morning USA!</content>
-            </message>
-            <message>
-                <author>Author2</author>
-                <content>It's nighttime, bud</content>
-            </message>
-        </div> 
-        <div class="commentBox">
-            <div><label for="comment">Add Message:</label></div>
-            <textarea name="comment"></textarea>
-            <button id="postNewMessage" type="submit" value="Post">Post</button>
-        </div>
         <aside class="repliesThread">
             <h2>Replies</h2>
             <button id="exitThread">Exit</button>
@@ -84,6 +65,11 @@
         </aside>
     </div>
 
+    <div class="menu-bar">
+        <button onclick="showSection('channelList')">Channels</button>
+        <button onclick="showSection('currentChannel')">Messages</button>
+        <button onclick="showSection('repliesThread')">Replies</button>
+    </div>
 
 </body>
 </html>
